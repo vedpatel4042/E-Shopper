@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Order Details Summary -->
+        <TextView
+            android:id="@+id/order_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Order #12345"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/order_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Order Date: Feb 10, 2025" />
+
+        <TextView
+            android:id="@+id/payment_method"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Payment: Credit Card - XXXX 1234" />
+
+        <TextView
+            android:id="@+id/order_total"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Total: $99.99"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <!-- Shipping Details -->
+        <TextView
+            android:id="@+id/shipping_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Shipping to: 123 Street, City, Country" />
+
+        <!-- Ordered Items List -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/items_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <!-- Action Buttons -->
+        <Button
+            android:id="@+id/btn_download_invoice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Download Invoice" />
+
+        <Button
+            android:id="@+id/btn_track_order"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Track Order"
+            android:backgroundTint="@color/black"
+            android:textColor="@android:color/white"/>
+
+    </LinearLayout>
+</ScrollView>

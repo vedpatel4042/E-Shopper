@@ -1,0 +1,193 @@
+plugins {
+    alias(libs.plugins.android.application)
+    alias(libs.plugins.google.gms.google.services)
+
+}
+
+android {
+    namespace 'com.example.e_shopper'
+    compileSdk 35
+
+    defaultConfig {
+        applicationId "com.example.e_shopper"
+        minSdk 24
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled true
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    packaging {
+        resources {
+            pickFirsts += [
+                    "META-INF/native-image/org.mongodb/bson/native-image.properties"
+            ]
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+    buildFeatures {
+        buildConfig true
+    }
+
+    // Add this if using data binding
+    buildFeatures {
+        dataBinding true
+    }
+}
+
+dependencies {
+    // AppCompat library for backward compatibility
+    implementation 'androidx.appcompat:appcompat:1.7.0'
+
+    // Material Design components
+    implementation 'com.google.android.material:material:1.12.0'
+
+    // Activity components
+    implementation 'androidx.activity:activity:1.6.1'
+
+    // ConstraintLayout for flexible layouts
+    implementation 'androidx.constraintlayout:constraintlayout:2.2.0'
+
+    // Play Services Analytics
+    implementation 'com.google.android.gms:play-services-analytics:18.1.1'
+    implementation 'com.google.android.gms:play-services-base:18.5.0'
+    implementation 'com.google.android.gms:play-services-maps:18.2.0'
+
+    // Firebase Analytics
+    implementation 'com.google.firebase:firebase-analytics:21.0.0'
+
+    // Firebase Realtime Database
+    implementation 'com.google.firebase:firebase-database:20.0.5'
+
+    // Firebase Storage
+    implementation 'com.google.firebase:firebase-storage:20.0.2'
+
+    // Firebase Authentication
+    implementation 'com.google.firebase:firebase-auth:22.1.0'
+
+    // Firebase Firestore
+    implementation 'com.google.firebase:firebase-firestore:24.0.0'
+
+    // Fragment library for fragment management
+    implementation 'androidx.fragment:fragment:1.5.5'
+
+    // Room database for local storage
+    implementation 'androidx.room:room-runtime:2.5.0'
+
+    // Media3 for media playback
+    implementation 'androidx.media3:media3-common:1.0.0'
+
+    // SwipeRefreshLayout for pull-to-refresh functionality
+    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
+    //implementation libs.play.services.identity
+    implementation 'com.google.android.gms:play-services-identity:18.0.1'
+
+    implementation platform('com.google.firebase:firebase-bom:32.7.1')
+    implementation 'com.google.firebase:firebase-firestore'
+    implementation libs.firebase.inappmessaging
+
+
+    // JUnit for unit testing
+    testImplementation 'junit:junit:4.13.2'
+
+    // JUnit Extensions for Android tests
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+
+    // Espresso for UI testing
+    androidTestImplementation 'androidx.espresso:espresso-core:3.5.1'
+
+    // CardView for displaying content in a card layout
+    implementation 'androidx.cardview:cardview:1.0.0'
+
+    // RecyclerView for displaying lists
+    implementation 'androidx.recyclerview:recyclerview:1.4.0'
+
+    // Multidex for large applications
+    implementation 'androidx.multidex:multidex:2.0.1'
+
+    // Firebase BoM (Bill of Materials) for Firebase version management
+    implementation platform('com.google.firebase:firebase-bom:33.8.0')
+
+    // Firebase Realtime Database (using Firebase BoM, no need for version number)
+    implementation 'com.google.firebase:firebase-database'
+
+    // Firebase Storage (using Firebase BoM, no need for version number)
+    implementation 'com.google.firebase:firebase-storage'
+
+    // Places SDK for location-based services (make sure to update to latest version)
+    implementation 'com.google.android.libraries.places:places:4.1.0'
+    implementation 'androidx.cardview:cardview:1.0.0'
+
+    // Glide for image loading
+    implementation 'com.github.bumptech.glide:glide:4.16.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.16.0'
+    implementation 'com.google.android.material:material:1.5.0'
+    // Navigation component for fragment navigation
+    implementation 'androidx.navigation:navigation-fragment:2.8.6'
+    implementation 'androidx.navigation:navigation-ui:2.8.6'
+
+
+
+}
+
+//    implementation libs.appcompat
+//    implementation libs.material
+//    implementation libs.activity
+//    implementation libs.constraintlayout
+//    implementation libs.play.services.analytics.impl
+//    implementation libs.firebase.analytics
+//    implementation libs.firebase.database
+//    implementation libs.firebase.storage
+//    implementation libs.firebase.auth
+//    implementation libs.fragment
+//    implementation libs.room.runtime
+//    implementation libs.media3.common
+//    implementation libs.swiperefreshlayout
+//    implementation libs.firebase.firestore
+//    testImplementation libs.junit
+//    androidTestImplementation libs.ext.junit
+//    androidTestImplementation libs.espresso.core
+//    implementation libs.appcompat.v161
+//    implementation libs.constraintlayout.v214
+//    implementation 'androidx.recyclerview:recyclerview:1.4.0'
+//    implementation libs.cardview
+//    implementation libs.material.v190
+//    implementation libs.multidex
+//
+//
+//        // Import the BoM for the Firebase platform
+//        implementation(platform("com.google.firebase:firebase-bom:33.8.0"))
+//
+//        // Add the dependency for the Realtime Database library
+//        // When using the BoM, you don't specify versions in Firebase library dependencies
+//        implementation(libs.google.firebase.database)
+//        implementation("androidx.recyclerview:recyclerview:1.4.0")
+//
+//    implementation libs.material.vlatestversion
+//
+//
+////    implementation 'com.google.android.libraries.places:places:4.1.0'
+//
+//
+//
+//        implementation libs.places.android
+//
+//
+//
+//    // Image Loading
+//    implementation 'com.github.bumptech.glide:glide:4.16.0'
+//    annotationProcessor 'com.github.bumptech.glide:compiler:4.16.0'
+//    implementation 'androidx.navigation:navigation-fragment:2.8.6'
+//    implementation 'androidx.navigation:navigation-ui:2.8.6'
+
